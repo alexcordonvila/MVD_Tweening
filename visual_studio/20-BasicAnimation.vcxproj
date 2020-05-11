@@ -38,6 +38,7 @@
     <ClCompile Include="..\src\Parsers.cpp" />
     <ClCompile Include="..\src\ScriptSystem.cpp" />
     <ClCompile Include="..\src\Shader.cpp" />
+    <ClCompile Include="..\src\TweeningSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\AnimationSystem.h" />
@@ -65,6 +66,7 @@
     <ClInclude Include="..\src\ScriptSystem.h" />
     <ClInclude Include="..\src\Shader.h" />
     <ClInclude Include="..\src\shaders_default.h" />
+    <ClInclude Include="..\src\TweeningSystem.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

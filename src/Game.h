@@ -13,6 +13,7 @@
 #include "ScriptSystem.h"
 #include "GUISystem.h"
 #include "AnimationSystem.h"
+#include "TweeningSystem.h"
 
 
 class Game
@@ -56,6 +57,8 @@ private:
     ScriptSystem script_system_;
 	GUISystem gui_system_;
     AnimationSystem animation_system_;
+	TweeningSystem tweening_system_;
+
 
 	int createFreeCamera_();
 	int createPlayer_(float aspect, ControlSystem& sys);

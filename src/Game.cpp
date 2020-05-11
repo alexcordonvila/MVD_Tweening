@@ -40,7 +40,7 @@ void Game::init(int w, int h) {
 	ball_mesh.geometry = graphics_system_.createGeometryFromFile("data/assets/ball.obj");
 	ball_mesh.material = graphics_system_.createMaterial();
 	graphics_system_.getMaterial(ball_mesh.material).shader_id = phong_shader->program;
-
+	
 	Parsers::parseAnimation("data/assets/bounce.anim");
     
 	//create scene contents here
@@ -51,6 +51,16 @@ void Game::init(int w, int h) {
 	graphics_system_.getMaterial(plane_mesh.material).shader_id = phong_shader->program;
 	ECS.getComponentFromEntity<Transform>(plane_entity).translate(0.0,-1.0,0.0);
 
+	//My tweening objects here:
+	 //create scene contents here
+	int tweening_ball_entity = ECS.createEntity("TweeningBall");
+	Mesh& tweening_ball_mesh = ECS.createComponentForEntity<Mesh>(tweening_ball_entity);
+	tweening_ball_mesh.geometry = graphics_system_.createGeometryFromFile("data/assets/ball.obj");
+	tweening_ball_mesh.material = graphics_system_.createMaterial();
+	graphics_system_.getMaterial(tweening_ball_mesh.material).shader_id = phong_shader->program;
+	ECS.getComponentFromEntity<Transform>(tweening_ball_entity).translate(2.0, 2.0, 0.0);
+	//tweening_system_.linearTranslation(lm::vec3(0.0f, 0.0, 0.0), lm::vec3(20.0f, 0.0, 0.0), 24,"TweeningBall");
+	tweening_system_.Translation(lm::vec3(0.0f, 0.0, 0.0), lm::vec3(0.0f, 20.0, 0.0), 24, "Linear", "TweeningBall");
 
     int light_ent = ECS.createEntity("Light");
     Light& light = ECS.createComponentForEntity<Light>(light_ent);
@@ -83,6 +93,9 @@ void Game::update(float dt) {
     
 	//Animation system
 	animation_system_.update(dt);
+
+	//Animation system
+	//tweening_system_.update(dt);
 
 	//scripts
 	script_system_.update(dt);
