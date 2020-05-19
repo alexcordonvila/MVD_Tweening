@@ -59,8 +59,12 @@ void Game::init(int w, int h) {
 	tweening_ball_mesh.material = graphics_system_.createMaterial();
 	graphics_system_.getMaterial(tweening_ball_mesh.material).shader_id = phong_shader->program;
 	ECS.getComponentFromEntity<Transform>(tweening_ball_entity).translate(2.0, 2.0, 0.0);
-	//tweening_system_.linearTranslation(lm::vec3(0.0f, 0.0, 0.0), lm::vec3(20.0f, 0.0, 0.0), 24,"TweeningBall");
-	tweening_system_.Translation(lm::vec3(0.0f, 0.0, 0.0), lm::vec3(0.0f, 20.0, 0.0), 24, "Linear", "TweeningBall");
+	
+	
+	//int number = ECS.getComponentFromEntity<Animation>("TweeningBall").tweenType;
+	Transform animation = ECS.getComponentFromEntity<Transform>("TweeningBall");
+	int number = 0;
+	tweening_system_.Translation(lm::vec3(0.0f, 0.0, 0.0), lm::vec3(0.0f, 20.0, 20.0), 24, number, "TweeningBall");
 
     int light_ent = ECS.createEntity("Light");
     Light& light = ECS.createComponentForEntity<Light>(light_ent);
@@ -95,7 +99,7 @@ void Game::update(float dt) {
 	animation_system_.update(dt);
 
 	//Animation system
-	//tweening_system_.update(dt);
+	tweening_system_.update(dt);
 
 	//scripts
 	script_system_.update(dt);

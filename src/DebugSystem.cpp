@@ -388,7 +388,31 @@ void DebugSystem::updateimGUI_(float dt) {
 			ImGui::TextColored(ImVec4(1, 1, 0, 1), "%s", ECS.entities[picked_collider.owner].name.c_str());
 		}
 
+		const char* items[]{ "Linear","Cubic","Pinpong","Exponential" };
+		static int selectedItem = 0;
+		static bool selected[1];
+		static float r, g, b;
+		static ImVec4 color = ImVec4(114.0f / 255.0f, 144.0f / 255.0f, 154.0f / 255.0f, 200.0f / 255.0f);
+	//	int entity_id = ECS.getEntity("TweeningBall");
 
+		Animation& anim =  ECS.getComponentFromEntity<Animation>("TweeningBall");
+		ImGui::Text("Select effect:");
+		if (ImGui::Combo("Shader", &selectedItem, items, IM_ARRAYSIZE(items), 4)) {}
+		switch (selectedItem) {
+			
+		case 0: //Linear
+		 
+			anim.tweenType = 0;
+			break;
+		case 1: //Waving
+			 anim.tweenType = 1;
+
+			break;
+		case 2: //Tint
+			
+			break;
+		
+		}
 		ImGui::End();
 
 		// Rendering

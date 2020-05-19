@@ -225,9 +225,18 @@ struct Animation : public Component {
     float ms_frame = 0;
     float ms_counter = 0;
     std::vector<lm::mat4> keyframes;
-
+    int tweenType = 1;
 };
-
+struct Tweening : public Component {
+    std::string name = "";
+    GLint target_transform = -1;
+    GLuint num_frames = 0;
+    GLuint curr_frame = 0;
+    float ms_frame = 0;
+    float ms_counter = 0;
+    std::vector<lm::mat4> keyframes;
+    int tweenType = 1;
+};
 /**** COMPONENT STORAGE ****/
 
 //add new component type vectors here to store them in *ECS*
@@ -239,7 +248,8 @@ std::vector<Light>,
 std::vector<Collider>,
 std::vector<GUIElement>,
 std::vector<GUIText>,
-std::vector<Animation>
+std::vector<Animation>,
+std::vector<Tweening>
 > ComponentArrays;
 
 //way of mapping different types to an integer value i.e.
@@ -254,8 +264,9 @@ template<> struct type2int<Collider> { enum { result = 4 }; };
 template<> struct type2int<GUIElement> { enum { result = 5 }; };
 template<> struct type2int<GUIText> { enum { result = 6 }; };
 template<> struct type2int<Animation> { enum { result = 7}; };
+template<> struct type2int<Tweening> { enum { result = 8 }; };
 //UPDATE THIS!
-const int NUM_TYPE_COMPONENTS = 8;
+const int NUM_TYPE_COMPONENTS = 9;
 
 /**** ENTITY ****/
 
