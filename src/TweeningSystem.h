@@ -19,12 +19,12 @@ public:
 	//void lateInit();*/
 	void update(float dt);
 	Options resolveOption(std::string input);
-	void Translation(lm::vec3 start, lm::vec3 end, GLuint numframes, int easing, std::string  target_ent);
-	void Rotation(lm::vec3 start, lm::vec3 end, GLuint numframes, std::string easing, std::string  target_ent);
+	void Tween(lm::vec3 startT, lm::vec3 endT, GLuint numframes, int easingT, lm::vec3 startR, lm::vec3 endR, int easingR,  std::string  target_ent);
+	void Rotation(lm::vec3 start, lm::vec3 end, GLuint numframes, int easing, std::string  target_ent);
 
-	 bool linear(lm::vec3 start, lm::vec3 end, GLuint numframes, std::string  target_ent);
+	 bool linear(lm::vec3 startT, lm::vec3 endT, lm::vec3 startR, lm::vec3 endR, GLuint numframes, std::string  target_ent);
 	 bool cubic(lm::vec3 start, lm::vec3 end, GLuint numframes, std::string  target_ent);
-	 void linearRotation();
+	 
 	 float lerp(float a, float b, float f);
 	 float cubicInterpolation(float a, float b, float f);
 	 float easeOutSine(float a, float b, float f);

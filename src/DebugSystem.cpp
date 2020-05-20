@@ -395,17 +395,17 @@ void DebugSystem::updateimGUI_(float dt) {
 		static ImVec4 color = ImVec4(114.0f / 255.0f, 144.0f / 255.0f, 154.0f / 255.0f, 200.0f / 255.0f);
 	//	int entity_id = ECS.getEntity("TweeningBall");
 
-		Animation& anim =  ECS.getComponentFromEntity<Animation>("TweeningBall");
+		Tweening& tween =  ECS.getComponentFromEntity<Tweening>("TweeningBall");
 		ImGui::Text("Select effect:");
 		if (ImGui::Combo("Shader", &selectedItem, items, IM_ARRAYSIZE(items), 4)) {}
 		switch (selectedItem) {
 			
 		case 0: //Linear
 		 
-			anim.tweenType = 0;
+			tween.tweenType = 0;
 			break;
 		case 1: //Waving
-			 anim.tweenType = 1;
+			tween.tweenType = 1;
 
 			break;
 		case 2: //Tint
