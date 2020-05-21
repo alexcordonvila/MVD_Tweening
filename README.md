@@ -9,15 +9,17 @@ Tween(start position, end position,number of frames, traslation function, start 
 
 ![Color](https://github.com/incodemon/MVD_Tweening/blob/master/data/assets/Function.JPG)
 
+There are 5 types of functions implemented: Linear, Cubic, Ease Out Sine, Ease Out Quint and Ease Out Bounce.
+
 ## **Screenshots**
 ![Color](https://github.com/incodemon/MVD_Tweening/blob/master/data/assets/example.gif)
 ### Linear
 ![Color](https://github.com/incodemon/MVD_Tweening/blob/master/data/assets/example1.gif)
-### cubicInterpolation
+### Cubic
 ![Color](https://github.com/incodemon/MVD_Tweening/blob/master/data/assets/example2.gif)
-### easeOutSine
+### Ease Out Sine
 ![Color](https://github.com/incodemon/MVD_Tweening/blob/master/data/assets/example3.gif)
-### easeOutQuint
+### Ease Out Quint
 ![Color](https://github.com/incodemon/MVD_Tweening/blob/master/data/assets/example4.gif)
-### easeOutBounce
+### Ease Out Bounce
 ![Color](https://github.com/incodemon/MVD_Tweening/blob/master/data/assets/example5.gif)
