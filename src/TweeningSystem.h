@@ -20,4 +20,5 @@ public:
 	 float easeOutSine(float a, float b, float f);
 	 float easeOutQuint(float a, float b, float f);
 	 float easeOutBounce(float a, float b, float f);
+	
 };

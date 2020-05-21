@@ -80,6 +80,7 @@ float TweeningSystem::easeOutBounce(float a, float b, float f)
 	}
 
 }
+
 bool TweeningSystem::execute_(lm::vec3 startT, lm::vec3 endT, lm::vec3 startR, lm::vec3 endR, GLuint numframes, std::string  target_ent, int optionT, int optionR) {
 	int entity_id;
 	float newXPosition, newYPosition, newZPosition, newXRotation, newYRotation, newZRotation;
@@ -122,6 +123,7 @@ bool TweeningSystem::execute_(lm::vec3 startT, lm::vec3 endT, lm::vec3 startR, l
 			newYPosition = easeOutBounce(c, d, (float)i / 100.0f);
 			newZPosition = easeOutBounce(e, f, (float)i / 100.0f);
 			break;
+	
 		default:
 			std::cout << "This easing doesn't exist" << '\n';
 		}
@@ -146,6 +148,11 @@ bool TweeningSystem::execute_(lm::vec3 startT, lm::vec3 endT, lm::vec3 startR, l
 			newXRotation = easeOutQuint(a, b, (float)i / 100.0f);
 			newYRotation = easeOutQuint(c, d, (float)i / 100.0f);
 			newZRotation = easeOutQuint(e, f, (float)i / 100.0f);
+			break;
+		case 4:
+			newXRotation = easeOutBounce(a, b, (float)i / 100.0f);
+			newYRotation = easeOutBounce(c, d, (float)i / 100.0f);
+			newZRotation = easeOutBounce(e, f, (float)i / 100.0f);
 			break;
 		default:
 			std::cout << "This easing doesn't exist" << '\n';
