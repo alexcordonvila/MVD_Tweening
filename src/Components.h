@@ -235,7 +235,7 @@ struct Tweening : public Component {
     float ms_frame = 0;
     float ms_counter = 0;
     std::vector<lm::mat4> keyframes;
-    int tweenType = 1;
+    int tweenType = 0;
 };
 /**** COMPONENT STORAGE ****/
 

@@ -53,24 +53,36 @@ void Game::init(int w, int h) {
 
 	//My tweening objects here:
 	 //create scene contents here
-	int tweening_ball_entity = ECS.createEntity("TweeningBall");
+	int tweening_cube_entity = ECS.createEntity("TweeningCube");
+	Mesh& tweening_cube_mesh = ECS.createComponentForEntity<Mesh>(tweening_cube_entity);
+	tweening_cube_mesh.geometry = graphics_system_.createGeometryFromFile("data/assets/cubemap.obj");
+	tweening_cube_mesh.material = graphics_system_.createMaterial();
+	graphics_system_.getMaterial(tweening_cube_mesh.material).shader_id = phong_shader->program;
+	ECS.getComponentFromEntity<Transform>(tweening_cube_entity).translate(2.0, 2.0, 0.0);
+	//-------------------------------------------------------------------------------------------------------
+	//EaseOutCube
+	int tweening_ball_entity = ECS.createEntity("TweeningCube1");
 	Mesh& tweening_ball_mesh = ECS.createComponentForEntity<Mesh>(tweening_ball_entity);
 	tweening_ball_mesh.geometry = graphics_system_.createGeometryFromFile("data/assets/cubemap.obj");
 	tweening_ball_mesh.material = graphics_system_.createMaterial();
 	graphics_system_.getMaterial(tweening_ball_mesh.material).shader_id = phong_shader->program;
 	ECS.getComponentFromEntity<Transform>(tweening_ball_entity).translate(2.0, 2.0, 0.0);
-	
-	
-	//int number = ECS.getComponentFromEntity<Animation>("TweeningBall").tweenType;
-	//Tweening animation = ECS.getComponentFromEntity<Tweening>("TweeningBall");
-	//int number = animation.tweenType;
 
-	tweening_system_.Tween(lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 10.0f, 0.0f), 24, 0, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f,45.0f, 0.0f),0, "TweeningBall");
-	//tweening_system_.Rotation(lm::vec3(0.0f, 0.0, 0.0), lm::vec3(0.0f, 360, 0), 24, 0, "TweeningBall");
+	//-------------------------------------------------------------------------------------------------------
+	//EaseOutCube
+	/*int tweening_ball_entity = ECS.createEntity("TweeningCube2");
+	Mesh& tweening_ball_mesh = ECS.createComponentForEntity<Mesh>(tweening_ball_entity);
+	tweening_ball_mesh.geometry = graphics_system_.createGeometryFromFile("data/assets/cubemap.obj");
+	tweening_ball_mesh.material = graphics_system_.createMaterial();
+	graphics_system_.getMaterial(tweening_ball_mesh.material).shader_id = phong_shader->program;
+	ECS.getComponentFromEntity<Transform>(tweening_ball_entity).translate(2.0, 2.0, 0.0);*/
 
 
-	//ECS.getComponentFromEntity<Tweening>(tweening_ball_entity).tweenType = 1;
-
+	//Lineal tweening
+	tweening_system_.Tween(lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(30.0f, 10.0f, 0.0f), 24, 0, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 45.0f, 0.0f), 0, "TweeningCube");
+	//cubicInterpolation
+	tweening_system_.Tween(lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(00.0f, 30.0f, 0.0f), 24, 1, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 0.0f, 0.0f), 0, "TweeningCube1");
+	//EasOutSine
 
     int light_ent = ECS.createEntity("Light");
     Light& light = ECS.createComponentForEntity<Light>(light_ent);

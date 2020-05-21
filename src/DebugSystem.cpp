@@ -393,8 +393,12 @@ void DebugSystem::updateimGUI_(float dt) {
 		static bool selected[1];
 		static float r, g, b;
 		static ImVec4 color = ImVec4(114.0f / 255.0f, 144.0f / 255.0f, 154.0f / 255.0f, 200.0f / 255.0f);
-	//	int entity_id = ECS.getEntity("TweeningBall");
+		
+	/*	
+		Camera& cam = ECS.getComponentInArray<Camera>(ECS.main_camera);
+		Transform& cam_transform = ECS.getComponentFromEntity<Transform>(cam.owner);*/
 
+		int entity_id = ECS.getEntity("TweeningBall");
 		Tweening& tween =  ECS.getComponentFromEntity<Tweening>("TweeningBall");
 		ImGui::Text("Select effect:");
 		if (ImGui::Combo("Shader", &selectedItem, items, IM_ARRAYSIZE(items), 4)) {}
