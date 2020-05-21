@@ -5,7 +5,7 @@
 We've created a new class called Tweening system.
 To use the tweening system in Game.cpp use the Tween function:
 
-Tween(start position, end position,number of frames, traslation function, start Rotation, end Rotation, rotation function, name of entity);
+Tween(start position, end position,number of frames, translation function, start Rotation, end Rotation, rotation function, name of entity);
 
 ![Color](https://github.com/incodemon/MVD_Tweening/blob/master/data/assets/Function.JPG)
 
