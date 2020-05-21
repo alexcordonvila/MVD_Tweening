@@ -82,13 +82,13 @@ void Game::init(int w, int h) {
 	ECS.getComponentFromEntity<Transform>(TweeningCube3_entity).translate(10.0, 2.0, 0.0);
 
 	//Lineal tweening
-	tweening_system_.Tween(lm::vec3(5.0f, 00.0f, 5.0f), lm::vec3(5.0f, 10.0f, 5.0f), 24, 0, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 10.0f, 0.0f), 0, "TweeningCube");
+	tweening_system_.Tween(lm::vec3(5.0f, 00.0f, 5.0f), lm::vec3(5.0f, 10.0f, 5.0f), 24, 0, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 0, "TweeningCube");
 	//cubicInterpolation
-	tweening_system_.Tween(lm::vec3(-5.0f, 0.0f, -5.0f), lm::vec3(-5.0f, 10.0f, -5.0f), 24, 1, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 10.0f, 0.0f), 1, "TweeningCube1");
+	tweening_system_.Tween(lm::vec3(-5.0f, 0.0f, -5.0f), lm::vec3(-5.0f, 10.0f, -5.0f), 24, 1, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 1, "TweeningCube1");
 	//EasOutSine
-	tweening_system_.Tween(lm::vec3(5.0f, 0.0f, -5.0f), lm::vec3(5.0f, 10.0f, -5.0f), 24, 2, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 10.0f, 0.0f), 2, "TweeningCube2");
+	tweening_system_.Tween(lm::vec3(5.0f, 0.0f, -5.0f), lm::vec3(5.0f, 10.0f, -5.0f), 24, 3, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 2, "TweeningCube2");
 	//EaseOutBounce
-	tweening_system_.Tween(lm::vec3(-5.0f,10.0f, 5.0f), lm::vec3(-5.0f, 0.0f, 5.0f), 24, 4, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 0, 0.0f), 0, "TweeningCube3");
+	tweening_system_.Tween(lm::vec3(-5.0f,10.0f, 5.0f), lm::vec3(-5.0f, 0.0f, 5.0f), 24, 4, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 2, "TweeningCube3");
 
 
 
