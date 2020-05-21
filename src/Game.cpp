@@ -60,11 +60,11 @@ void Game::init(int w, int h) {
 	ECS.getComponentFromEntity<Transform>(tweening_cube_entity).translate(10.0, 10.0, 0.0);
 	//-------------------------------------------------------------------------------------------------------
 	//EaseOutCube
-	int TweeningCube1_entity = ECS.createEntity("TweeningCube1");
+	/*int TweeningCube1_entity = ECS.createEntity("TweeningCube1");
 	Mesh& tweeningCube1_mesh = ECS.createComponentForEntity<Mesh>(TweeningCube1_entity);
 	tweeningCube1_mesh.geometry = graphics_system_.createGeometryFromFile("data/assets/cubemap.obj");
 	graphics_system_.getMaterial(tweeningCube1_mesh.material).shader_id = phong_shader->program;
-	ECS.getComponentFromEntity<Transform>(TweeningCube1_entity).translate(-10.0, 2.0, 0.0);
+	ECS.getComponentFromEntity<Transform>(TweeningCube1_entity).translate(-10.0, 2.0, 0.0);*/
 
 	//-------------------------------------------------------------------------------------------------------
 	//EaseOutCube
@@ -75,20 +75,20 @@ void Game::init(int w, int h) {
 	ECS.getComponentFromEntity<Transform>(TweeningCube2_entity).translate(10.0, 2.0, 0.0);
 	//-------------------------------------------------------------------------------------------------------
 	//Bounce Cube tween
-	int TweeningCube3_entity = ECS.createEntity("TweeningCube3");
+	/*int TweeningCube3_entity = ECS.createEntity("TweeningCube3");
 	Mesh& tweeningCube3_mesh = ECS.createComponentForEntity<Mesh>(TweeningCube3_entity);
 	tweeningCube3_mesh.geometry = graphics_system_.createGeometryFromFile("data/assets/cubemap.obj");
 	graphics_system_.getMaterial(tweeningCube3_mesh.material).shader_id = phong_shader->program;
-	ECS.getComponentFromEntity<Transform>(TweeningCube3_entity).translate(10.0, 2.0, 0.0);
+	ECS.getComponentFromEntity<Transform>(TweeningCube3_entity).translate(10.0, 2.0, 0.0);*/
 
 	//Lineal tweening
-	tweening_system_.Tween(lm::vec3(5.0f, 00.0f, 5.0f), lm::vec3(5.0f, 10.0f, 5.0f), 24, 0, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 0, "TweeningCube");
+	//tweening_system_.Tween(lm::vec3(5.0f, 00.0f, 5.0f), lm::vec3(5.0f, 10.0f, 5.0f), 24, 0, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 0, "TweeningCube");
 	//cubicInterpolation
-	tweening_system_.Tween(lm::vec3(-5.0f, 0.0f, -5.0f), lm::vec3(-5.0f, 10.0f, -5.0f), 24, 1, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 1, "TweeningCube1");
+	//tweening_system_.Tween(lm::vec3(-5.0f, 0.0f, -5.0f), lm::vec3(-5.0f, 10.0f, -5.0f), 24, 1, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 1, "TweeningCube1");
 	//EasOutSine
-	tweening_system_.Tween(lm::vec3(5.0f, 0.0f, -5.0f), lm::vec3(5.0f, 10.0f, -5.0f), 24, 3, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 2, "TweeningCube2");
+	tweening_system_.Tween(lm::vec3(5.0f, 0.0f, -5.0f), lm::vec3(5.0f, 10.0f, -5.0f), 24, 2, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 2, "TweeningCube2");
 	//EaseOutBounce
-	tweening_system_.Tween(lm::vec3(-5.0f,10.0f, 5.0f), lm::vec3(-5.0f, 0.0f, 5.0f), 24, 4, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 2, "TweeningCube3");
+	//tweening_system_.Tween(lm::vec3(-5.0f,10.0f, 5.0f), lm::vec3(-5.0f, 0.0f, 5.0f), 24, 4, lm::vec3(0.0f, 0.0f, 0.0f), lm::vec3(0.0f, 5.0f, 0.0f), 2, "TweeningCube3");
 
 
 
